@@ -13,6 +13,12 @@
 
 <img style="width:50%;" src="./uml/usecase-diagramm_scheduler-assistant.svg"></img>
 
+#
+#
+## The backend component diragramm
+
+<img style="width:80%;" src="./uml/backend-services-dependencies-diagramm.svg"></img>
+
 # Documentation
 
 # H1

@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "pushd srcUml && java -jar ../plantuml.jar -o ../uml * && popd && node app.js"
   },
-  "author": "intech",
   "license": "ISC",
   "dependencies": {
     "markdown-pdf": "github:purtuga/markdown-pdf#master"

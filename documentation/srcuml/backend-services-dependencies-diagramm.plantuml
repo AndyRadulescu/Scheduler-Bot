@@ -1,0 +1,73 @@
+@startuml
+
+title Scheduler-Bot backend Component Diagram
+
+component [app-starter] as apstart
+note right of apstart
+The service that composese
+the rest-controller and 
+the bot-handler service
+to expose the admin (web userser) 
+and the bot-handler (bot-user) 
+functionalites.
+end note
+
+component [bot-handler] as bothandler
+note left of bothandler
+Implements the connection layer 
+with the bot users. Intercepts 
+the calls from the user and 
+forwards it to the service layer
+end note
+
+component [rest-controller] as rest
+note left of rest
+Implements the RESTful API 
+for the web-dashboard.
+Forwards the calls to 
+the service layer.
+end note
+
+component [service] as service
+note left of service
+Implements all business logic
+of the system.Processes the calls
+for REST clients and the bot clients.
+Persists the changes in the DB.
+Communicates with the messages-processor.
+Connecs to the third-party apps 
+like Googel Calender and Facebok messager.
+end note
+
+component [messages-processor] as msproc
+note bottom of msproc
+Implements the NLP logic for
+processing the messages 
+for the bot and retuns back 
+stuctured data understudable 
+from the business logic control flows.
+end note
+
+component [security] as security
+note bottom of security
+Provides JWT security layer for all the REST API.
+end note
+
+component [persistance] as persist
+note bottom of persist
+The connection point with
+the DB layer. Provides the 
+API for manipulating the
+system stored data.
+end note
+
+apstart --> bothandler
+apstart --> rest
+
+rest --> service
+rest --> security
+
+bothandler --> service
+service --> persist
+service --> msproc
+@enduml
