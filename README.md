@@ -6,8 +6,8 @@
 
 | Nr ctr.  | Name                           | Desciption                                     | Status (open(:hourglass:)/in-progress(:warning:)/done(:heavy_check_mark:) |
 | -------- |:------------------------------:| ----------------------------------------------:| -------------------------------------------------------------------------:|
-| 1.       | Task 1                        | Dummy task                                      | open :hourglass:                                                          |
-| 2.       | Task 1                        | Dummy task                                      | open :hourglass:                                                          |
+| 1.       | Web-login(Andy)                     | Login the user                                      | in-progress(:warning:)                                                          |
+| 2.       | Web-homePage(Andy)                       | Create the home page to see all the details and statistics.                                    | open :hourglass:                                                          |
 | 3.       | Task 1                        | Dummy task                                      | open :hourglass:                                                          |
 | 4.       | Task 1                        | Dummy task                                      | open :hourglass:                                                          |
 | 5.       | Task 1                        | Dummy task                                      | open :hourglass:                                                          |
