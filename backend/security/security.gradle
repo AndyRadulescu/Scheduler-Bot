@@ -1,36 +1,31 @@
 
 dependencies {
-	
-	//HIBERNATE TYPES    
-    compile ('com.vladmihalcea:hibernate-types-52:1.0.0')
-   
-   //SPRING 
-	compile ('org.springframework:spring-core:5.0.1.RELEASE',exludeDefaultLogger)
+
+    // MISC
+	compile ('org.springframework:spring-web:5.0.1.RELEASE',exludeDefaultLogger)
+	compile ('javax.servlet:javax.servlet-api:4.0.0')
 	compile ('org.aspectj:aspectjweaver:1.8.11')
 	
-    //JACKSON
-    compile ('com.fasterxml.jackson.core:jackson-core:2.9.1')
-    compile ('com.fasterxml.jackson.core:jackson-databind:2.9.1')
-    compile ('com.fasterxml.jackson.core:jackson-annotations:2.9.1')
-    compile ('com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.1')
-
-	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-
-    //Persistence
-    compile('org.eclipse.persistence:javax.persistence:2.1.0')
-    compile('org.hibernate:hibernate-entitymanager:5.2.11.Final')
+	//DEVICE
+	compile ( 'org.springframework.mobile:spring-mobile-device:1.1.5.RELEASE',exludeDefaultLogger)
 	
+	//SPRING SECURITY
+    compile ('org.springframework.security:spring-security-core:4.2.3.RELEASE',exludeDefaultLogger)
+    compile ('org.springframework.security:spring-security-web:4.2.3.RELEASE',exludeDefaultLogger)
+    compile ('org.springframework.security:spring-security-config:4.2.3.RELEASE',exludeDefaultLogger)
+    compile ('io.jsonwebtoken:jjwt:0.7.0')
+    
+    //Hibernate
+    compile ('org.eclipse.persistence:javax.persistence:2.1.0')
+    
 	//JPA
 	compile ('org.springframework.data:spring-data-jpa:2.0.0.RELEASE',exludeDefaultLogger)
 	compile ('org.hibernate:hibernate-entitymanager:5.2.11.Final')
-	compile ('org.hibernate:hibernate-java8:5.2.11.Final')
 	
 	//Database
 	compile ('commons-dbcp:commons-dbcp:1.4')
-	compile ('org.postgresql:postgresql:42.1.4')
-
-	//Test    
-   	testCompile ('org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE')
-	
+	runtime ('org.postgresql:postgresql:42.1.4')
+    
+	//TEST
+	testCompile ('org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE')
 }
-
