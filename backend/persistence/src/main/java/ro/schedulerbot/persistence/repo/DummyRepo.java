@@ -1,5 +1,5 @@
 package ro.schedulerbot.persistence.repo;
 
-public class DummyRepo {
+public class DummyRepo  {
 
 }
