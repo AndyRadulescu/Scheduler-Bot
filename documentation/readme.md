@@ -19,6 +19,17 @@
 
 <img style="width:80%;" src="./uml/backend-services-dependencies-diagramm.svg"></img>
 
+#
+#
+## The ER diagramm diragramm
+
+<img style="width:80%;" src="./er-diagramm/scheduler_bot_ER.svg"></img>
+
+
+# Technologies for the future 
+ Framework for integrating third-party login (eg. Facebook, Google) : https://loopback.io/doc/en/lb2/index.html
+ Login with Facebook  Angular 4+ Spring Bot: https://stackoverflow.com/questions/47188485/spring-boot-angular-4-social-and-local-login, http://www.baeldung.com/facebook-authentication-with-spring-security-and-social
+
 # Documentation
 
 # H1
