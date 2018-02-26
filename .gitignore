@@ -130,11 +130,21 @@ documentation/package-lock.json
 ### Ember ###
 # see https://github.com/ember-cli/ember-cli/blob/master/blueprints/app/files/gitignore
 # compiled output
+package-lock.json
+/dist
+/tmp
+# dependencies
+/node_modules
+/bower_components
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
 /dist
 /tmp
 
 # dependencies
-/node_modules
+/frontend-admin/node_modules
 /bower_components
 
 # misc
@@ -142,5 +152,12 @@ documentation/package-lock.json
 /connect.lock
 /coverage/*
 /libpeerconnection.log
-npm-debug.log
+npm-debug.log*
+yarn-error.log
 testem.log
+
+# ember-try
+.node_modules.ember-try/
+bower.json.ember-try
+package.json.ember-try
+
