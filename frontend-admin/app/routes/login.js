@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject } from '@ember/service'
 
-export default Ember.Route.extend({
-    fb: Ember.inject.service(),
+export default Route.extend({
+    fb: inject(),
 
     beforeModel() {
         return this.get('fb').FBInit();
