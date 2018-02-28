@@ -17,12 +17,6 @@ module.exports = function (environment) {
             }
         },
 
-        FB : {
-            appId: '433030660488215',
-            version: 'v2.13',
-            xfbml: true
-        },
-
         APP: {
             // Here you can pass flags/options to your application instance
             // when it is created
@@ -51,6 +45,23 @@ module.exports = function (environment) {
 
     if (environment === 'production') {
         // here you can enable a production-specific feature
+    }
+
+    ENV.FB = {
+        appId: 433030660488215,
+        version: 'v2.7',
+        xfbml: true
+    }
+
+    ENV.contentSecurityPolicy = {
+        'default-src': "'none'",
+        'script-src': "'self' 'unsafe-eval' http://example.com:35729 https://connect.facebook.net http://connect.facebook.net https://graph.facebook.com",
+        'font-src': "'self'",
+        'connect-src': "'self' ws://example.com:35729",
+        'img-src': "'self' https://www.facebook.com",
+        'style-src': "'self' 'unsafe-inline'",
+        'media-src': "'self'",
+        'frame-src': "http://static.ak.facebook.com http://staticxx.facebook.com https://s-static.ak.facebook.com https://www.facebook.com http://www.facebook.com"
     }
 
     return ENV;

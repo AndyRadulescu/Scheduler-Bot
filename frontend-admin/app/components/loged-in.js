@@ -10,9 +10,10 @@ export default Component.extend({
             } else {
                 let OAuth = response.authResponse;
                 console.log(OAuth);
-                this.get('modelCopy').api('/me', { access_token: OAuth.accessToken });
+                this.get('modelCopy').api('/me').then((res) => {
+                    console.log(res);
+                });
             }
-            // console.log(this.get('fb').api('/me'));
         });
     },
 
