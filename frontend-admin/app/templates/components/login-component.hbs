@@ -1,8 +1,10 @@
 <section class="  ">
-    <div class="">
-        <p class = "text-center">Nu stiu ce sa scriu!</p>
-    </div>
-    <div class="text-center" {{action "onLoginWithFacebook"}}>
-        <img  class="img-fluid" src="assets/images/facebook-login.png ">
+    <div class="text-center">
+        <p class="text-center no-margins">Sign in with your account or register</p>
+        <img class="img-fluid test2" {{action "onLoginWithFacebook"}} src="assets/images/facebook-login.png">
+        <p class="text-center no-margins margin-top-small">If you don't own an account, Register!</p>
+       {{#link-to "register"}}
+        <button type="button" class="btn btn-default margin-top-small button-color">Regiser</button>
+        {{/link-to}}
     </div>
 </section>

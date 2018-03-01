@@ -1,13 +1,27 @@
+@import "variables";
+
 .test{
     background-color: red;
     // display: inline-block;
 }
-
-.inline-block{
-    display: inline-block;
-    width: 300px;
+.test2{
+    background-color: green;
+    // display: inline-block;
 }
 
-.viewportHeight{
-    height:100vh;
+.no-margins{
+    margin:0;
+}
+
+.button-color{
+    background-color: $buttonPrimaryColor;
+    color: white;
+}
+
+.viewportHalfHeight{
+    height:$halfViewPort;
+}
+
+.margin-top-small{
+    margin-top: $marginTopSmall;
 }
