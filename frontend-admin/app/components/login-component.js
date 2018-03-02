@@ -17,7 +17,6 @@ export default Component.extend({
 
     actions: {
         onLoginWithFacebook() {
-            // publish_actions
             this.get('fb').login('email public_profile').then((response) => {
                 console.log(response.authResponse);
                 this.get('router').transitionTo('main');
