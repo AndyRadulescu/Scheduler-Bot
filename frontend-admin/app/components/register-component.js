@@ -15,14 +15,14 @@ export default Component.extend({
             if (user.fullName === "" || user.email === "" || user.password === "" || user.confirmPassword === "") {
                 alert("Make sure to configure every field before submitting!")
             } else if (!this.isEmail(user.email)) {
-                alert('Email fornat not correct  ' + user.email);
+                alert('Email format not correct  ' + user.email);
             } else if (user.password !== user.confirmPassword) {
                 alert("Passwords do not match!");
             } else if (user.password.length < 8) {
                 alert('Password to short, minimum number of characters is 8.')
             } else {
                 console.log(user);
-                console.log(this.get('user').findAll());
+                console.log(this.get('user'));
                 this.get('router').transitionTo('login');
             }
         }
