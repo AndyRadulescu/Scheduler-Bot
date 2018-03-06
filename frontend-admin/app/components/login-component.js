@@ -18,7 +18,8 @@ export default Component.extend({
     actions: {
         onLoginWithFacebook() {
             this.get('fb').login('email public_profile').then((response) => {
-                console.log(response.authResponse);
+                window.localStorage.fbToken = response.authResponse.accessToken;
+                // console.log(response.authResponse.accessToken);
                 this.get('router').transitionTo('main');
                 console.log('it worked!')
             });

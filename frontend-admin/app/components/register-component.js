@@ -1,10 +1,10 @@
 import Component from '@ember/component';
-import Ember from 'ember';
+import { inject } from '@ember/service';
 
 export default Component.extend({
     regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     url: "http://localhost:8000/api/user",
-    ajax: Ember.inject.service(),
+    ajax: inject(),
 
     actions: {
         submitForm() {
