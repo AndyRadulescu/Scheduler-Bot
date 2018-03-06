@@ -1,28 +1,35 @@
 import Component from '@ember/component';
+import Ember from 'ember';
 
 export default Component.extend({
     regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    url: "http://localhost:8000/api/user",
+    ajax: Ember.inject.service(),
 
     actions: {
         submitForm() {
             let user = {
-                fullName: this.$('#fullName').val(),
+                name: this.$('#fullName').val(),
                 email: this.$('#email').val(),
                 password: this.$('#psd').val(),
-                confirmPassword: this.$('#confPsd').val(),
-            }
+            };
+            let confirmPassword = this.$('#confPsd').val();
 
-            if (user.fullName === "" || user.email === "" || user.password === "" || user.confirmPassword === "") {
+            if (user.name === "" || user.email === "" || user.password === "" || confirmPassword === "") {
                 alert("Make sure to configure every field before submitting!")
             } else if (!this.isEmail(user.email)) {
                 alert('Email fornat not correct  ' + user.email);
-            } else if (user.password !== user.confirmPassword) {
+            } else if (user.password !== confirmPassword) {
                 alert("Passwords do not match!");
             } else if (user.password.length < 8) {
                 alert('Password to short, minimum number of characters is 8.')
             } else {
+                // let aux = JSON.stringify(user);
                 console.log(user);
-                console.log(this.get('user').findAll());
+                this.get('ajax').request(this.url, {
+                    method: 'POST',
+                    data: user
+                });
                 this.get('router').transitionTo('login');
             }
         }
