@@ -43,7 +43,7 @@ public class DbConfig {
     HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
     vendorAdapter.setGenerateDdl(Boolean.TRUE);
     vendorAdapter.setShowSql(Boolean.TRUE);
-
+    
     factory.setDataSource(dataSource());
     factory.setJpaVendorAdapter(vendorAdapter);
     factory.setPackagesToScan("com.intech.hwlmonitor.model");
