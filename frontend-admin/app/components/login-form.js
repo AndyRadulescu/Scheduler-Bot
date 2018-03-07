@@ -20,7 +20,7 @@ export default Component.extend({
                     method: 'GET',
                 }).then((res) => {
                     if (!res) {
-                        alert('Register first!');
+                        alert('This user is not registerd yet! Register first!');
                         return;
                     }
                     // console.log(res);
