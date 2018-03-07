@@ -2,5 +2,16 @@
 dependencies {
 	compile project (':persistence')
 	compile project (':messages-processor')
+	
+	compile group: 'com.mashape.unirest', name: 'unirest-java', version: '1.4.9'
+
+	//SPRING
+	compile ('org.springframework:spring-core:5.0.1.RELEASE',exludeDefaultLogger)
+
+	//Test    
+   	testCompile ('org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE')
+   	
+   	//Mokito
+   	testCompile ('org.mockito:mockito-core:2.11.0')
 }
 

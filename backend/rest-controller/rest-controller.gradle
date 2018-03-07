@@ -12,7 +12,7 @@ apply plugin: 'application'
 
 dependencies {
 	compile project (':service')
-	compile project (':security')
+	//compile project (':security')
 	
 	//	SPRING
     compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE', exludeDefaultLogger)
