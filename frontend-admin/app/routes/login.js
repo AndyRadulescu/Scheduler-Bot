@@ -1,12 +1,11 @@
 import Route from '@ember/routing/route';
-// import { inject } from '@ember/service'
+import { inject } from '@ember/service'
 
 export default Route.extend({
-    // fb: inject(),
+    utils: inject(),
 
     beforeModel() {
-        console.log(window.localStorage.token);
-        if (window.localStorage.token != '' || window.localStorage.fbToken) {
+        if (this.get('utils').get('token') || this.get('utils').get('fbToken')) {
             this.transitionTo('main');
         }
         return this.get('fb').FBInit();
