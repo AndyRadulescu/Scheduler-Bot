@@ -6,7 +6,7 @@
 
 | Nr ctr.  |               Assigned to      |                 Name                           | Desciption                                                                |  Status (open(:hourglass:)/in-progress(:warning:)/done(:heavy_check_mark:) |
 | -------- |:------------------------------:| ----------------------------------------------:| -------------------------------------------------------------------------:|---------------------------------------------------------------------------:|
-| 1.       |          Andy                  | Web-login                     | Login the user                                      | in-progress(:warning:)                                                          |
+| 1.       |          Andy                  | Web-login                     | Login the user                                      | done(:heavy_check_mark:)                                                          |
 | 2.       |         Andy                   | Web-homePage                       | Create the home page to see all the details and statistics.                                    | open :hourglass:                                                          |
 | 3.       |         Raul                   | Looking for facebook connection           | Thinking what we need in db for facebook connection   | in-progress(:warning:)                                                          |
 | 4.       |         Raul                   | Create a db connection(Raul)                        | Create db with dummy tables, connection with backend and a dummy rest                                       | open :hourglass:                                                          |
