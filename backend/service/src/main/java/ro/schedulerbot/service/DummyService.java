@@ -16,6 +16,7 @@ public class DummyService {
 		Subscriber subscriber = new Subscriber();
 		subscriber.setId(Long.valueOf(1));
 		subscriber.setName("Aaaaa");
+		subscriberRepo.save(subscriber);
 	}
 	
 }
