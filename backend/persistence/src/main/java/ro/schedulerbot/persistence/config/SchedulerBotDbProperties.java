@@ -4,14 +4,12 @@ package ro.schedulerbot.persistence.config;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Configuration
-@PropertySource("classpath:application.properties")
 public class SchedulerBotDbProperties {
   
   @Value("${hibernate.hbm2ddl.auto}")

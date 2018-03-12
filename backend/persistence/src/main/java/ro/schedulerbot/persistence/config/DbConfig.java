@@ -46,7 +46,7 @@ public class DbConfig {
     
     factory.setDataSource(dataSource());
     factory.setJpaVendorAdapter(vendorAdapter);
-    factory.setPackagesToScan("com.intech.hwlmonitor.model");
+    factory.setPackagesToScan("ro.schedulerbot.persistence.model");
 
     Map<String, String> jpaProperties = new HashMap<>();
     jpaProperties.put("hibernate.hbm2ddl.auto", prop.getHibernateAuto());
