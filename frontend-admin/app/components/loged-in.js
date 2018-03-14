@@ -16,7 +16,7 @@ export default Component.extend({
 
         this.get('modelCopy').getLoginStatus().then((response) => {
             this.status = response.status;
-            console.log(`status   ${this.status}`);
+            // console.log(`status   ${this.status}`);
             //     if (status !== 'connected' && this.token ==='') {
             //         this.get('router').transitionTo('login');
             //     } else {
@@ -61,7 +61,6 @@ export default Component.extend({
     },
 
     tokenEmpty() {
-        console.log('ceva');
         this.get('utils').removeToken();
         this.get('utils').removeFbToken();
     },

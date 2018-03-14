@@ -1,5 +1,6 @@
 import Service from '@ember/service';
 // import { bind } from '@ember/runloop';
+import $ from 'jquery';
 
 export default Service.extend({
 
@@ -10,24 +11,34 @@ export default Service.extend({
 
         //listener
         // console.log($(localStorage))
-        // jQuery(localStorage).on('change', this.unAuthorizedToken);
+        var callback = this.unAuthorizedToken.bind(this);
+        $(window).on('storage', callback);
         // console.log($(localStorage))
     },
 
-    unAuthorizedToken() {
-        console.log('a intrat');
-        this.removeToken();
-        this.get('router').transitionTo('login');
+    unAuthorizedToken(event) {
+        var storageEvent = event.originalEvent;
+        console.log(storageEvent);
+        let newValue = storageEvent.newValue;
+        let oldValue = storageEvent.oldValue;
+
+        if (oldValue !==null && newValue !== oldValue) {
+            // this.notifyPropertyChange(key);
+            console.log('a intrat');
+            this.removeToken();
+            this.get('router').transitionTo('login');
+        }
     },
 
     setToken(value) {
+        console.log('set token');
         this.set('token', value);
-        window.localStorage.token = value;
+        window.localStorage.setItem('token', value);
     },
 
     setFbToken(value) {
         this.set('fbToken', value);
-        window.localStorage.fbToken = value;
+        window.localStorage.setItem('fbToken', value);
     },
 
     removeToken() {
