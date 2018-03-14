@@ -4,6 +4,9 @@ module.exports = {
         ecmaVersion: 2017,
         sourceType: 'module'
     },
+    plugins: [
+        'ember'
+    ],
     "globals": { "Ember": true },
     extends: [
         'eslint:recommended',
