@@ -19,6 +19,11 @@ export default Component.extend({
         }
     },
 
+    /**
+     * Logs in the user.
+     * @param {* } email 
+     * @param {*} password 
+     */
     login(email, password) {
         if (email !== "" && password !== "") {
             // console.log(email + "   " + password);
@@ -44,6 +49,10 @@ export default Component.extend({
         }
     },
 
+    /**
+     *  Login is also available by pressing the 'enter' key.
+     * @param {*} event 
+     */
     keyPress(event) {
 
         if (event.keyCode === 13) {

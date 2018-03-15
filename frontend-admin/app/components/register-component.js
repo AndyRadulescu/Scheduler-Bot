@@ -7,6 +7,9 @@ export default Component.extend({
     ajax: inject(),
 
     actions: {
+        /**
+         * Registers a new user.
+         */
         submitForm() {
             let user = {
                 name: this.$('#fullName').val(),

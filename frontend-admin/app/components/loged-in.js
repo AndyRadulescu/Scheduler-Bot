@@ -10,9 +10,7 @@ export default Component.extend({
         this._super(...arguments);
         this.token = this.get('utils').get('token');
         this.fbToken = this.get('utils').get('fbToken');
-        // console.log(`token ${this.token}`);
-        // console.log(`fbToken ${this.fbToken}`);
-        // this.get('modelCopy').setAccessToken(this.fbToken);
+        console.log(this.token);
 
         this.get('modelCopy').getLoginStatus().then((response) => {
             this.status = response.status;
@@ -51,6 +49,10 @@ export default Component.extend({
         }
     },
 
+    /**
+     * Verifies authentification status. Sends a post request to the backend.
+     * The backend responds and if a 401 status code is sent(unauthorized), the session is ended.
+     */
     verifyAuthentification() {
         this.get('ajax').myRequest(this.url + '/sync', {
             method: 'POST'
@@ -60,6 +62,9 @@ export default Component.extend({
         });
     },
 
+    /**
+     * Removes both tokens.
+     */
     tokenEmpty() {
         this.get('utils').removeToken();
         this.get('utils').removeFbToken();
