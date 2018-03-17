@@ -58,8 +58,14 @@ allprojects {
         include '**/*IntSpec.*'
     }
 }
-ext.exludeDefaultLogger = 
-{  	 
-	exclude group: "commons-logging", module: "commons-logging"
+configurations.all {
+    exclude group: "commons-logging", module: "commons-logging"
     exclude module: "spring-boot-starter-logging"
 }
+
+//ext {
+//    exludeDefaultLogger = {
+//        exclude group: "commons-logging", module: "commons-logging"
+//        exclude module: "spring-boot-starter-logging"
+//    }
+//}

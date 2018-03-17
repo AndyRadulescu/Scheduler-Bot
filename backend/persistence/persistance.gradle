@@ -21,7 +21,7 @@ dependencies {
     compile('org.hibernate:hibernate-entitymanager:5.2.11.Final')
 	
 	//JPA
-	compile ('org.springframework.data:spring-data-jpa:2.0.0.RELEASE',exludeDefaultLogger)
+	compile 'org.springframework.data:spring-data-jpa:2.0.0.RELEASE', exludeDefaultLogger
 	compile ('org.hibernate:hibernate-entitymanager:5.2.11.Final')
 	compile ('org.hibernate:hibernate-java8:5.2.11.Final')
 	

@@ -18,7 +18,7 @@ dependencies {
 	compile project (':bot-handler')
 	
 	//	SPRING
-    compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE', exludeDefaultLogger)
+    compile 'org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE'
 	
 }
 
