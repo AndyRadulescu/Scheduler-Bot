@@ -2,8 +2,10 @@ package ro.schedulerbot.rest_controller_standalone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"ro.schedulerbot.rest_controller.config"})
+@PropertySource("classpath:application.properties")
 public class RestControllerApplication {
 
 	public static void main(String[] args) {
