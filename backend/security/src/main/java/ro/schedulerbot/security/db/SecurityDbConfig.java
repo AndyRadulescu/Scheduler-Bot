@@ -47,7 +47,7 @@ public class SecurityDbConfig {
 
     factory.setDataSource(datasource);
     factory.setJpaVendorAdapter(vendorAdapter);
-    factory.setPackagesToScan("com.intech.hwlmonitor.security.model");
+    factory.setPackagesToScan("ro.schedulerbot.security.model");
 
     Map<String, String> jpaProperties = new HashMap<>();
     jpaProperties.put("hibernate.hbm2ddl.auto", prop.getHibernateAuto());

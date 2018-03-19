@@ -15,33 +15,12 @@ import lombok.ToString;
 
 
 @Getter
-
-
 @Setter
-
-/**
- * Instantiates a new security user.
- *
- * @param id, the id
- * @param username, the username
- * @param password, the password
- * @param enabled, the enabled
- */
 @AllArgsConstructor
-
-/**
- * Instantiates a new security user.
- */
 @NoArgsConstructor
 @Entity
-
 @ToString
 @Table(name = "users")
-/**
- * 
- * The SecurityUser Class
- *
- */
 public class SecurityUser {
   
   /** The SecurityUser's id. */
