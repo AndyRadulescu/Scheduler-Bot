@@ -1,13 +1,10 @@
 package ro.schedulerbot.persistence.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
@@ -21,9 +18,9 @@ import lombok.Setter;
 
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Entity
-@Table(name = "subscriber")
-public class Subscriber {
-	
+@Table(name = "scheduler_config")
+public class SchedulerConfig {
+
 	@Getter
 	@Setter
 	@Id
@@ -33,29 +30,18 @@ public class Subscriber {
 	
 	@Getter
 	@Setter
-	@Column(name = "name", nullable = false)
-	private String name;
-	
-	@Getter
-	@Setter
-	@Column(name = "email", nullable = false, unique = true)
-	private String email;
+	@Column(name = "business_type", nullable = false)
+	private String businessType;
 	
 	@Getter
 	@Setter
 	@Type(type = "jsonb")
-	@Column(name = "facebook_conn", nullable = false, columnDefinition = "jsonb")
-	private JSONObject facebookConn;
+	@Column(name = "availability", nullable = false, columnDefinition = "jsonb")
+	private JSONObject availability;
 	
 	@Getter
 	@Setter
 	@Type(type = "jsonb")
-	@Column(name = "google_calendar_conn", nullable = false, columnDefinition = "jsonb")
-	private JSONObject googleCalendarConn;
-	
-	@Getter
-	@Setter
-	@OneToMany(mappedBy ="subscriber")
-	private List<Subscription> subscriptions;
-	
+	@Column(name = "appointment_types", nullable = false, columnDefinition = "jsonb")
+	private JSONObject appointmentTypes;
 }

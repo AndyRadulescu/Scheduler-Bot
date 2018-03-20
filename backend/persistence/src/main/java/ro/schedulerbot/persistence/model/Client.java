@@ -10,20 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-import org.json.simple.JSONObject;
-
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
-
 import lombok.Getter;
 import lombok.Setter;
 
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Entity
-@Table(name = "subscriber")
-public class Subscriber {
-	
+@Table(name = "client")
+public class Client {
+
 	@Getter
 	@Setter
 	@Id
@@ -38,24 +31,21 @@ public class Subscriber {
 	
 	@Getter
 	@Setter
-	@Column(name = "email", nullable = false, unique = true)
+	@Column(name = "email")
 	private String email;
 	
 	@Getter
 	@Setter
-	@Type(type = "jsonb")
-	@Column(name = "facebook_conn", nullable = false, columnDefinition = "jsonb")
-	private JSONObject facebookConn;
+	@Column(name = "facebook_id")
+	private String facebookId;
 	
 	@Getter
 	@Setter
-	@Type(type = "jsonb")
-	@Column(name = "google_calendar_conn", nullable = false, columnDefinition = "jsonb")
-	private JSONObject googleCalendarConn;
+	@Column(name = "phone_nr")
+	private String phoneNr;
 	
 	@Getter
 	@Setter
-	@OneToMany(mappedBy ="subscriber")
+	@OneToMany(mappedBy ="client")
 	private List<Subscription> subscriptions;
-	
 }

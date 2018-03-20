@@ -1,5 +1,6 @@
 package ro.schedulerbot.service;
 
+import org.json.simple.parser.ParseException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class DummyServiceTest {
 	DummyService dummy;
 	
 	@Test
-	public void testSaveDummySubscriber(){
+	public void testSaveDummySubscriber() throws ParseException{
 		dummy.saveDummySubscriber();
 	}
 

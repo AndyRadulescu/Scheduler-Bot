@@ -1,5 +1,6 @@
 package ro.schedulerbot.rest_controller.controller;
 
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class DummyController {
 	DummyService dummyService;
 	
 	@RequestMapping(value = "/save", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
-	public String saveSubscriber() {
+	public String saveSubscriber() throws ParseException {
 		dummyService.saveDummySubscriber();
 		return "ok";
 	}
