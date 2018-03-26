@@ -24,7 +24,7 @@ import ro.schedulerbot.security.service.LoginService;
 
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "/api")
 public class LoginController {
 
   @Value("${jwt.header}")
