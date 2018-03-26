@@ -31,6 +31,18 @@ public class Subscriber {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	
+	  /** The SecurityUser's username. */
+	@Column(name = "username", nullable = false)
+    private String username;
+	
+    /** The SecurityUser's password. */
+    @Column(name = "password")
+    private String password;
+
+    /** The SecurityUser's enabled status. */
+    @Column(name = "enabled")
+	private Boolean enabled;
+	
 	@Getter
 	@Setter
 	@Column(name = "name", nullable = false)
