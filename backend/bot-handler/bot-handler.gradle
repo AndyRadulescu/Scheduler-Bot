@@ -11,14 +11,13 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 
 dependencies {
-	
-	compile project (':service')
-	
-	//	SPRING
-    compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE', exludeDefaultLogger)
-	
-	
-	//Facebook message API wrapper
-	compile 'com.github.messenger4j:messenger4j:1.0.0-M3'
+
+    compile project(':service')
+
+    //	SPRING
+    compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE')
+
+    //Facebook message API wrapper
+    compile 'com.github.messenger4j:messenger4j:1.0.0-M3'
 }
 

@@ -5,7 +5,7 @@ dependencies {
     compile ('com.vladmihalcea:hibernate-types-52:1.0.0')
    
    //SPRING 
-	compile ('org.springframework:spring-core:5.0.1.RELEASE',exludeDefaultLogger)
+	compile ('org.springframework:spring-core:5.0.1.RELEASE')
 	compile ('org.aspectj:aspectjweaver:1.8.11')
 	
     //JACKSON
@@ -21,7 +21,7 @@ dependencies {
     compile('org.hibernate:hibernate-entitymanager:5.2.11.Final')
 	
 	//JPA
-	compile ('org.springframework.data:spring-data-jpa:2.0.0.RELEASE',exludeDefaultLogger)
+	compile ('org.springframework.data:spring-data-jpa:2.0.0.RELEASE')
 	compile ('org.hibernate:hibernate-entitymanager:5.2.11.Final')
 	compile ('org.hibernate:hibernate-java8:5.2.11.Final')
 	

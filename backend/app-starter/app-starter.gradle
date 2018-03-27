@@ -14,11 +14,11 @@ mainClassName = "ro.schedulerbot.app_starter.SchedulerBotApplication"
 
 
 dependencies {
-	compile project (':rest-controller')
-	compile project (':bot-handler')
-	
-	//	SPRING
-    compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE', exludeDefaultLogger)
-	
+    compile project(':rest-controller')
+    compile project(':bot-handler')
+
+    //	SPRING
+    compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE')
+
 }
 

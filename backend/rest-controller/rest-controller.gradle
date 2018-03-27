@@ -11,13 +11,13 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 
 dependencies {
-	compile project (':service')
-	compile project (':security')
-	
-	//	SPRING
-    compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE', exludeDefaultLogger)
+    compile project(':service')
+    compile project(':security')
+
+    //	SPRING
+    compile('org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE')
     compile("org.springframework.boot:spring-boot-devtools")
-    
-	
+
+
 }
 

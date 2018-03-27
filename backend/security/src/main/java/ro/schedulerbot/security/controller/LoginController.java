@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import ro.schedulerbot.security.conig.sec.JwtTokenUtil;
 import ro.schedulerbot.security.dto.LoginDto;
 import ro.schedulerbot.security.dto.LoginResponseDto;
@@ -27,42 +26,42 @@ import ro.schedulerbot.security.service.LoginService;
 @RequestMapping(value = "/api")
 public class LoginController {
 
-  @Value("${jwt.header}")
-  private String tokenHeader;
+    @Value("${jwt.header}")
+    private String tokenHeader;
 
-  @Autowired
-  private AuthenticationManager authenticationManager;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
-  @Autowired
-  private JwtTokenUtil jwtTokenUtil;
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
 
-  @Autowired
-  private LoginService userDetailsService;
+    @Autowired
+    private LoginService userDetailsService;
 
-  @RequestMapping(value = "/login/", produces = MediaType.APPLICATION_JSON_VALUE,
-      consumes = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
-  public ResponseEntity<?> login(@RequestBody LoginDto loginDto, Device device)
-      throws AuthenticationException {
-    // Perform the security
-    final Authentication authentication = authenticationManager.authenticate(
-        new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword()));
+    @RequestMapping(value = "/login/", produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
+    public ResponseEntity<?> login(@RequestBody LoginDto loginDto, Device device)
+            throws AuthenticationException {
+        // Perform the security
+        final Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword()));
 
-    SecurityContextHolder.getContext().setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
 
-    // Reload password post-security so we can generate token
-    final JwtUser userDetails = userDetailsService.loadUserByUsername(loginDto.getUsername());
+        // Reload password post-security so we can generate token
+        final JwtUser userDetails = userDetailsService.loadUserByUsername(loginDto.getUsername());
 
-    final String token = jwtTokenUtil.generateToken(userDetails, device);
+        final String token = jwtTokenUtil.generateToken(userDetails, device);
 
-    return ResponseEntity
-        .ok(new LoginResponseDto(token, userDetails.getIdUser(), userDetails.getUsername()));
-  }
+        return ResponseEntity
+                .ok(new LoginResponseDto(token, userDetails.getIdUser(), userDetails.getUsername()));
+    }
 
-  @RequestMapping(value = "/checkIsAuthenticated", produces = MediaType.APPLICATION_JSON_VALUE,
-      method = RequestMethod.GET)
-  public boolean checkIsAuthenticated() {
-    return true;
-  }
+    @RequestMapping(value = "/checkIsAuthenticated", produces = MediaType.APPLICATION_JSON_VALUE,
+            method = RequestMethod.GET)
+    public boolean checkIsAuthenticated() {
+        return true;
+    }
 }
 
 
