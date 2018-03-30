@@ -12,36 +12,39 @@
 #### Localtunnel
 **Localtunnel allows you to easily share a web service on your local development machine without messing with DNS and firewall settings.**
 
-To install localtunnel(javascript tool) execute the following command:
+To install localtunnel (javascript tool) execute the following command:
 
-`npm install -g localtunnel`
+  * `npm install -g localtunnel`
 
 ## Steps:
 
 
 ### Facebook-Dev side:
 1. Make sure you have a facebook page and a facebook app created.
-[Create a facbook page](https://www.facebook.com/pages/create)
-[Create a facebook app](https://developers.facebook.com/docs/apps/register)
+
+  * [Create a facbook page](https://www.facebook.com/pages/create)
+
+  * [Create a facebook app](https://developers.facebook.com/docs/apps/register)
 
 2. Follow this link and do step 1 and 3:
-[App Setup](https://developers.facebook.com/docs/messenger-platform/getting-started/app-setup)
 
-Remember to save the `PAGE_ACCESS_TOKEN`.
+  * [App Setup](https://developers.facebook.com/docs/messenger-platform/getting-started/app-setup)
+
+  * Remember to save the  `PAGE_ACCESS_TOKEN`.
 
 3. Go to your **app->settings->basic** and save the `APP_SECRET`.
 
 ### Server-side:
 1. In the CallbackHandler class, edit the following variables to match your app settings:
 
-* `private static final String PAGE_ACCESS_TOKEN;`
-* `private static final String APP_SECRET;`
+  * `private static final String PAGE_ACCESS_TOKEN;`
+  * `private static final String APP_SECRET;`
 
 2. Run BotHandlerApplication.java on the desired port (default is **8080**)
 
 3. Share the local web service using localtunnel by executing the following command:
 
-* `lt --port 8000`
+  * `lt --port 8000`
 
 4. Copy the generated URL to the clipboard.
 
