@@ -4,6 +4,7 @@
 
 <body>
 <article class="markdown-body">
+
 # Bot Setup Guide
 
 ## Resources needed:
